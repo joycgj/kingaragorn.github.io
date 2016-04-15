@@ -63,7 +63,7 @@
 
 在中括号[]内的每个组件都需要有空格">
 <meta property="og:type" content="article">
-<meta property="og:title" content="shell 判断">
+<meta property="og:title" content="shell 判断、循环、函数">
 <meta property="og:url" content="http://yoursite.com/2016/04/15/shell-decision/index.html">
 <meta property="og:site_name" content="Joy's Life Canvas">
 <meta property="og:description" content="判断符号[]使用中括号必须要特别注意，因为中括号用在很多地方，包括通配符与正则表达式等，所以如果要在 bash 的语法当中使用中括号作为 shell 的判断式时，必须要注意中括号的两端需要有空格符来分割。
@@ -71,9 +71,9 @@
 12[root@default-tpl vbird_shell]# [ -z &quot;$HOME&quot; ] ; ECHO $?1
 
 在中括号[]内的每个组件都需要有空格">
-<meta property="og:updated_time" content="2016-04-15T10:25:00.000Z">
+<meta property="og:updated_time" content="2016-04-15T13:31:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="shell 判断">
+<meta name="twitter:title" content="shell 判断、循环、函数">
 <meta name="twitter:description" content="判断符号[]使用中括号必须要特别注意，因为中括号用在很多地方，包括通配符与正则表达式等，所以如果要在 bash 的语法当中使用中括号作为 shell 的判断式时，必须要注意中括号的两端需要有空格符来分割。
 判断 $HOME 这个变量是否为空
 12[root@default-tpl vbird_shell]# [ -z &quot;$HOME&quot; ] ; ECHO $?1
@@ -96,7 +96,7 @@
   };
 </script>
 
-  <title> shell 判断 | Joy's Life Canvas </title>
+  <title> shell 判断、循环、函数 | Joy's Life Canvas </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +246,7 @@
             
             
               
-                shell 判断
+                shell 判断、循环、函数
               
             
           </h1>
@@ -341,6 +341,16 @@
 <p>注意：elif 后面都要接 then 来处理，但是 else 已经是最后了，所以 else 后面并没有 then。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">"please input (Y/N):"</span> yn</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$yn</span>"</span> == <span class="string">"Y"</span> ] || [ <span class="string">"<span class="variable">$yn</span>"</span> == <span class="string">"y"</span> ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"ok, continue"</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="string">"<span class="variable">$yn</span>"</span> == <span class="string">"N"</span> ] || [ <span class="string">"<span class="variable">$yn</span>"</span> == <span class="string">"n"</span> ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"oh, interrupt"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"I don't know what your choice is"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
 <h2 id="case…esac"><a href="#case…esac" class="headerlink" title="case…esac"></a>case…esac</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">case $变量名 in</span><br><span class="line">	&quot;第一个变量内容&quot;)   	## 每个变量内容建议用双引号括起来，关键字则为小括号)</span><br><span class="line">		code here</span><br><span class="line">		;;					## 每个类型结尾使用两个连续的分号来处理</span><br><span class="line">	&quot;第二个变量内容&quot;)</span><br><span class="line">		code here</span><br><span class="line">		;;</span><br><span class="line">	*)						## 最后一个变量内容都会用 * 来代表所有其它值</span><br><span class="line">		code here</span><br><span class="line">		;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"this program will print your selection"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="variable">$1</span> <span class="keyword">in</span></span><br><span class="line">    <span class="string">"one"</span>)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"one"</span></span><br><span class="line">        ;;</span><br><span class="line">    <span class="string">"two"</span>)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"two"</span></span><br><span class="line">        ;;</span><br><span class="line">    <span class="string">"three"</span>)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"three"</span></span><br><span class="line">        ;;</span><br><span class="line">    *)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"usage <span class="variable">$0</span> &#123;one|two|three&#125;"</span></span><br><span class="line">        ;;</span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
+<h2 id="function"><a href="#function" class="headerlink" title="function"></a>function</h2><p>shell script 的执行方式是由上而下、由左而右，因此 function 的设置一定要在程序的最前面。</p>
+<p>function 也是拥有内部变量的，它的内置变量与 shell script 很类似，函数名称 $0，而后续的变量以 $1，$2… 来代替。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">printit</span></span>() &#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"your choice is <span class="variable">$1</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"this program will print your selection"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="variable">$1</span> <span class="keyword">in</span></span><br><span class="line">    <span class="string">"one"</span>)</span><br><span class="line">        printit 1</span><br><span class="line">        ;;</span><br><span class="line">    <span class="string">"two"</span>)</span><br><span class="line">        printit 2</span><br><span class="line">        ;;</span><br><span class="line">    <span class="string">"three"</span>)</span><br><span class="line">        printit 3</span><br><span class="line">        ;;</span><br><span class="line">    *)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"usage <span class="variable">$0</span> &#123;one|two|three&#125;"</span></span><br><span class="line">        ;;</span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
+<h2 id="while-do-done-until-do-done-不定循环"><a href="#while-do-done-until-do-done-不定循环" class="headerlink" title="while do done, until do done(不定循环)"></a>while do done, until do done(不定循环)</h2><p>当 condition 条件成立时，就进行循环，直到 condition 的条件不成立才停止</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while [ condition ]</span><br><span class="line">do</span><br><span class="line">	code here</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line"><span class="keyword">while</span> [ <span class="string">"<span class="variable">$yn</span>"</span> != <span class="string">"Y"</span> <span class="_">-a</span> <span class="string">"<span class="variable">$yn</span>"</span> != <span class="string">"y"</span> ]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">read</span> -p <span class="string">"please input y/Y to stop this program: "</span> yn</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"OK! you input the correct answer."</span></span><br></pre></td></tr></table></figure>
+<p>当条件成立时，就终止循环，否则就持续进行循环</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">until [ condition ]</span><br><span class="line">do</span><br><span class="line">	code here</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line">until [ <span class="string">"<span class="variable">$yn</span>"</span> == <span class="string">"Y"</span> -o <span class="string">"<span class="variable">$yn</span>"</span> == <span class="string">"y"</span> ]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">read</span> -p <span class="string">"please input y/Y to stop this program: "</span> yn</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"OK! you input the correct answer."</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -373,6 +383,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/15/shell-parentheses/" rel="prev" title="Linux shell “(())” 双括号运算符使用">
+                Linux shell “(())” 双括号运算符使用 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -440,7 +454,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -448,7 +462,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -457,7 +471,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -490,7 +504,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#判断符号"><span class="nav-number">1.</span> <span class="nav-text">判断符号[]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if…then"><span class="nav-number">2.</span> <span class="nav-text">if…then</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单层、简单条件判断式"><span class="nav-number">2.1.</span> <span class="nav-text">单层、简单条件判断式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多重、复杂条件判断式"><span class="nav-number">2.2.</span> <span class="nav-text">多重、复杂条件判断式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#case…esac"><span class="nav-number">3.</span> <span class="nav-text">case…esac</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#判断符号"><span class="nav-number">1.</span> <span class="nav-text">判断符号[]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if…then"><span class="nav-number">2.</span> <span class="nav-text">if…then</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单层、简单条件判断式"><span class="nav-number">2.1.</span> <span class="nav-text">单层、简单条件判断式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多重、复杂条件判断式"><span class="nav-number">2.2.</span> <span class="nav-text">多重、复杂条件判断式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#case…esac"><span class="nav-number">3.</span> <span class="nav-text">case…esac</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#function"><span class="nav-number">4.</span> <span class="nav-text">function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while-do-done-until-do-done-不定循环"><span class="nav-number">5.</span> <span class="nav-text">while do done, until do done(不定循环)</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
