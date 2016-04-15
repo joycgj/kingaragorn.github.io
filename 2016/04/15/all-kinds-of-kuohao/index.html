@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux,shell,括号," />
+  <meta name="keywords" content="linux,shell," />
 
 
 
@@ -58,18 +58,27 @@
 
 
 <meta name="description" content="原文地址
-使用方法123456789101112131415语法：((表达式1,表达式2...))特点:1、在双括号结构中，所有表达式可以像c语言一样，如：a++，b-- 等；2、在双括号结构中，所有变量可以不加入 &amp;quot;$&amp;quot; 符号前缀；3、双括号可以进行逻辑运算，四则运算；4、双括号结构 扩展了for，while， if 条件测试运算；5、支持多个表达式运算，各个表达式之间用 &amp;">
+一、 小括号、圆括号（）(())单小括号 ()
+命令组。括号中的命令将会新开一个子 shell 顺序执行，所以括号中的变量不能够被脚本余下的部分使用。括号中多个命令之间用分号隔开，最后一个命令可以没有分号，各命令和括号之间不必有空格。
+
+命令替换。等同于 cmd，shell扫描一遍命令行，发现了 $(cmd) 结构，便将 $(cmd) 中的 cmd 执行一次，得到其标准输出，再将此输出放">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux shell “(())” 双括号运算符使用">
-<meta property="og:url" content="http://yoursite.com/2016/04/15/shell-parentheses/index.html">
+<meta property="og:title" content="shell中各种括号的作用()、(())、[]、[[]]、{} todo">
+<meta property="og:url" content="http://yoursite.com/2016/04/15/all-kinds-of-kuohao/index.html">
 <meta property="og:site_name" content="Joy's Life Canvas">
 <meta property="og:description" content="原文地址
-使用方法123456789101112131415语法：((表达式1,表达式2...))特点:1、在双括号结构中，所有表达式可以像c语言一样，如：a++，b-- 等；2、在双括号结构中，所有变量可以不加入 &amp;quot;$&amp;quot; 符号前缀；3、双括号可以进行逻辑运算，四则运算；4、双括号结构 扩展了for，while， if 条件测试运算；5、支持多个表达式运算，各个表达式之间用 &amp;">
-<meta property="og:updated_time" content="2016-04-15T14:18:53.000Z">
+一、 小括号、圆括号（）(())单小括号 ()
+命令组。括号中的命令将会新开一个子 shell 顺序执行，所以括号中的变量不能够被脚本余下的部分使用。括号中多个命令之间用分号隔开，最后一个命令可以没有分号，各命令和括号之间不必有空格。
+
+命令替换。等同于 cmd，shell扫描一遍命令行，发现了 $(cmd) 结构，便将 $(cmd) 中的 cmd 执行一次，得到其标准输出，再将此输出放">
+<meta property="og:updated_time" content="2016-04-15T15:08:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux shell “(())” 双括号运算符使用">
+<meta name="twitter:title" content="shell中各种括号的作用()、(())、[]、[[]]、{} todo">
 <meta name="twitter:description" content="原文地址
-使用方法123456789101112131415语法：((表达式1,表达式2...))特点:1、在双括号结构中，所有表达式可以像c语言一样，如：a++，b-- 等；2、在双括号结构中，所有变量可以不加入 &amp;quot;$&amp;quot; 符号前缀；3、双括号可以进行逻辑运算，四则运算；4、双括号结构 扩展了for，while， if 条件测试运算；5、支持多个表达式运算，各个表达式之间用 &amp;">
+一、 小括号、圆括号（）(())单小括号 ()
+命令组。括号中的命令将会新开一个子 shell 顺序执行，所以括号中的变量不能够被脚本余下的部分使用。括号中多个命令之间用分号隔开，最后一个命令可以没有分号，各命令和括号之间不必有空格。
+
+命令替换。等同于 cmd，shell扫描一遍命令行，发现了 $(cmd) 结构，便将 $(cmd) 中的 cmd 执行一次，得到其标准输出，再将此输出放">
 
 
 
@@ -87,7 +96,7 @@
   };
 </script>
 
-  <title> Linux shell “(())” 双括号运算符使用 | Joy's Life Canvas </title>
+  <title> shell中各种括号的作用()、(())、[]、[[]]、{} todo | Joy's Life Canvas </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -237,7 +246,7 @@
             
             
               
-                Linux shell “(())” 双括号运算符使用
+                shell中各种括号的作用()、(())、[]、[[]]、{} todo
               
             
           </h1>
@@ -249,7 +258,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-15T21:55:54+08:00" content="2016-04-15">
+            <time itemprop="dateCreated" datetime="2016-04-15T22:37:45+08:00" content="2016-04-15">
               2016-04-15
             </time>
           </span>
@@ -282,18 +291,6 @@
 
                 
                 
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/linux/shell/括号/" itemprop="url" rel="index">
-                    <span itemprop="name">括号</span>
-                  </a>
-                </span>
-
-                
-                
 
               
             </span>
@@ -319,18 +316,24 @@
       
 
       
-        <p><a href="http://www.cnblogs.com/chengmo/archive/2010/10/19/1855577.html" target="_blank" rel="external">原文地址</a></p>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">语法：</span><br><span class="line"></span><br><span class="line">((表达式1,表达式2...))</span><br><span class="line"></span><br><span class="line">特点:</span><br><span class="line"></span><br><span class="line">1、在双括号结构中，所有表达式可以像c语言一样，如：a++，b-- 等；</span><br><span class="line"></span><br><span class="line">2、在双括号结构中，所有变量可以不加入 &quot;$&quot; 符号前缀；</span><br><span class="line"></span><br><span class="line">3、双括号可以进行逻辑运算，四则运算；</span><br><span class="line"></span><br><span class="line">4、双括号结构 扩展了for，while， if 条件测试运算；</span><br><span class="line"></span><br><span class="line">5、支持多个表达式运算，各个表达式之间用 &quot;,&quot; 分开。</span><br></pre></td></tr></table></figure>
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="扩展四则运算"><a href="#扩展四则运算" class="headerlink" title="扩展四则运算"></a>扩展四则运算</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line">a=1</span><br><span class="line">b=2</span><br><span class="line">c=3</span><br><span class="line"></span><br><span class="line">((a=a+1))</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$a</span></span><br><span class="line"></span><br><span class="line">a=$((a+1,b++,c++))</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$a</span>,<span class="variable">$b</span>,<span class="variable">$c</span></span><br></pre></td></tr></table></figure>
-<p>result:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">3,3,4</span><br></pre></td></tr></table></figure>
-<p>双括号结构之间支持多个表达式，然后加减乘除等c语言常用运算符都支持。如果双括号带 “$”，将获得表达式值赋值给左边变量。</p>
-<h3 id="扩展逻辑运算"><a href="#扩展逻辑运算" class="headerlink" title="扩展逻辑运算"></a>扩展逻辑运算</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line">a=1</span><br><span class="line">b=<span class="string">"ab"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $((a&gt;1?8:9))</span><br><span class="line"></span><br><span class="line">((b!=<span class="string">"a"</span>)) &amp;&amp; <span class="built_in">echo</span> <span class="string">"err2"</span></span><br><span class="line">((a&lt;2)) &amp;&amp; <span class="built_in">echo</span> <span class="string">"ok"</span></span><br></pre></td></tr></table></figure>
-<p>result:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">9</span><br><span class="line">err2</span><br><span class="line">ok</span><br></pre></td></tr></table></figure>
-<h3 id="扩展流程控制语句（逻辑关系式）"><a href="#扩展流程控制语句（逻辑关系式）" class="headerlink" title="扩展流程控制语句（逻辑关系式）"></a>扩展流程控制语句（逻辑关系式）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line">num=100</span><br><span class="line">total=0</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>((i=0;i&lt;=num;i++))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    ((total+=i))</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$total</span></span><br><span class="line"></span><br><span class="line">total=0</span><br><span class="line">i=0</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> ((i&lt;=num))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    ((total+=i,i++))</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$total</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ((total&gt;=5050)); <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"ok"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
-<p>result:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">5050</span><br><span class="line">5050</span><br><span class="line">ok</span><br></pre></td></tr></table></figure>
+        <p><a href="http://blog.csdn.net/taiyang1987912/article/details/39551385" target="_blank" rel="external">原文地址</a></p>
+<h2 id="一、-小括号、圆括号（）"><a href="#一、-小括号、圆括号（）" class="headerlink" title="一、 小括号、圆括号（）(())"></a>一、 小括号、圆括号（）(())</h2><h3 id="单小括号"><a href="#单小括号" class="headerlink" title="单小括号 ()"></a>单小括号 ()</h3><ul>
+<li><p>命令组。括号中的命令将会新开一个子 shell 顺序执行，所以括号中的变量不能够被脚本余下的部分使用。括号中多个命令之间用分号隔开，最后一个命令可以没有分号，各命令和括号之间不必有空格。</p>
+</li>
+<li><p>命令替换。等同于 <code>cmd</code>，shell扫描一遍命令行，发现了 $(cmd) 结构，便将 $(cmd) 中的 cmd 执行一次，得到其标准输出，再将此输出放到原来命令。</p>
+</li>
+<li><p>用于初始化数组。如：array=(a b c d)。</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ls </span><br><span class="line">a b c </span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> $(ls) </span><br><span class="line">a b c </span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> `ls` </span><br><span class="line">a b c</span><br></pre></td></tr></table></figure>
+<h3 id="双小括号"><a href="#双小括号" class="headerlink" title="双小括号 (())"></a>双小括号 (())</h3><ul>
+<li><p>只要括号中的运算符、表达式符合C语言运算规则，都可用在$((exp))中，甚至是三目运算符。作不同进位(如二进制、八进制、十六进制)运算时，输出结果全都自动转化成了十进制。如：echo $((16#5f)) 结果为95 (16进位转十进制)</p>
+</li>
+<li><p>单纯用 (( )) 也可重定义变量值，比如 a=5; ((a++)) 可将 $a 重定义为6；</p>
+</li>
+<li><p>常用于算术运算比较，双括号中的变量可以不使用 $ 符号前缀。括号内支持多个表达式用逗号分开。只要括号中的表达式符合c语言运算规则，比如可以直接使用 for((i=0;i&lt;5;i++))， 如果不使用双括号, 则为 for i in <code>seq 0 4</code> 或者 for i in {0..4}。再如可以直接使用 if (($i&lt;5)) 或者 if ((i&lt;5)), 如果不使用双括号, 则为if [ $i -lt 5 ]。</p>
+</li>
+</ul>
 
       
     </div>
@@ -349,8 +352,6 @@
           
             <a href="/tags/shell/" rel="tag">#shell</a>
           
-            <a href="/tags/括号/" rel="tag">#括号</a>
-          
         </div>
       
 
@@ -358,17 +359,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/15/shell-decision/" rel="next" title="shell 判断、循环、函数">
-                <i class="fa fa-chevron-left"></i> shell 判断、循环、函数
+              <a href="/2016/04/15/shell-parentheses/" rel="next" title="Linux shell “(())” 双括号运算符使用">
+                <i class="fa fa-chevron-left"></i> Linux shell “(())” 双括号运算符使用
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/15/all-kinds-of-kuohao/" rel="prev" title="shell中各种括号的作用()、(())、[]、[[]]、{} todo">
-                shell中各种括号的作用()、(())、[]、[[]]、{} todo <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -486,7 +483,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">1.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例"><span class="nav-number">2.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展四则运算"><span class="nav-number">2.1.</span> <span class="nav-text">扩展四则运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展逻辑运算"><span class="nav-number">2.2.</span> <span class="nav-text">扩展逻辑运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展流程控制语句（逻辑关系式）"><span class="nav-number">2.3.</span> <span class="nav-text">扩展流程控制语句（逻辑关系式）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、-小括号、圆括号（）"><span class="nav-number">1.</span> <span class="nav-text">一、 小括号、圆括号（）(())</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单小括号"><span class="nav-number">1.1.</span> <span class="nav-text">单小括号 ()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双小括号"><span class="nav-number">1.2.</span> <span class="nav-text">双小括号 (())</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
