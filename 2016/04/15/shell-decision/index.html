@@ -59,26 +59,26 @@
 
 <meta name="description" content="判断符号[]使用中括号必须要特别注意，因为中括号用在很多地方，包括通配符与正则表达式等，所以如果要在 bash 的语法当中使用中括号作为 shell 的判断式时，必须要注意中括号的两端需要有空格符来分割。
 判断 $HOME 这个变量是否为空
-12[root@default-tpl vbird_shell]# [ -z &amp;quot;$HOME&amp;quot; ] ; ECHO $?1
+12[root@default-tpl vbird_shell]# [ -z &quot;$HOME&quot; ] ; ECHO $?1
 
-在中括号[]内的">
+在中括号[]内的每个组件都需要有空格">
 <meta property="og:type" content="article">
 <meta property="og:title" content="shell 判断">
 <meta property="og:url" content="http://yoursite.com/2016/04/15/shell-decision/index.html">
 <meta property="og:site_name" content="Joy's Life Canvas">
 <meta property="og:description" content="判断符号[]使用中括号必须要特别注意，因为中括号用在很多地方，包括通配符与正则表达式等，所以如果要在 bash 的语法当中使用中括号作为 shell 的判断式时，必须要注意中括号的两端需要有空格符来分割。
 判断 $HOME 这个变量是否为空
-12[root@default-tpl vbird_shell]# [ -z &amp;quot;$HOME&amp;quot; ] ; ECHO $?1
+12[root@default-tpl vbird_shell]# [ -z &quot;$HOME&quot; ] ; ECHO $?1
 
-在中括号[]内的">
-<meta property="og:updated_time" content="2016-04-15T08:23:00.000Z">
+在中括号[]内的每个组件都需要有空格">
+<meta property="og:updated_time" content="2016-04-15T08:27:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell 判断">
 <meta name="twitter:description" content="判断符号[]使用中括号必须要特别注意，因为中括号用在很多地方，包括通配符与正则表达式等，所以如果要在 bash 的语法当中使用中括号作为 shell 的判断式时，必须要注意中括号的两端需要有空格符来分割。
 判断 $HOME 这个变量是否为空
-12[root@default-tpl vbird_shell]# [ -z &amp;quot;$HOME&amp;quot; ] ; ECHO $?1
+12[root@default-tpl vbird_shell]# [ -z &quot;$HOME&quot; ] ; ECHO $?1
 
-在中括号[]内的">
+在中括号[]内的每个组件都需要有空格">
 
 
 
@@ -318,7 +318,7 @@
       
         <h2 id="判断符号"><a href="#判断符号" class="headerlink" title="判断符号[]"></a>判断符号[]</h2><p>使用中括号必须要特别注意，因为中括号用在很多地方，包括通配符与正则表达式等，所以如果要在 bash 的语法当中使用中括号作为 shell 的判断式时，必须要注意中括号的两端需要有空格符来分割。</p>
 <p>判断 $HOME 这个变量是否为空</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@default-tpl vbird_shell]# [ -z &quot;$HOME&quot; ] ; ECHO $?</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@default-tpl vbird_shell]<span class="comment"># [ -z "$HOME" ] ; ECHO $?</span></span><br><span class="line">1</span><br></pre></td></tr></table></figure>
 <ul>
 <li>在中括号[]内的每个组件都需要有空格键来分割；</li>
 <li>在中括号内的变量，最好都以双引号括起来；</li>
@@ -326,9 +326,9 @@
 <li>判断式中使用两个等号 == 与使用 = 的结果是一样的，建议使用两个等号；</li>
 </ul>
 <p>为什么变量要用双引号括起来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@default-tpl vbird_shell]# name=&quot;hello world&quot;</span><br><span class="line">[root@default-tpl vbird_shell]# echo $name</span><br><span class="line">hello world</span><br><span class="line">[root@default-tpl vbird_shell]# [ $name == &quot;hello&quot; ]</span><br><span class="line">-bash: [: too many arguments</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@default-tpl vbird_shell]<span class="comment"># name="hello world"</span></span><br><span class="line">[root@default-tpl vbird_shell]<span class="comment"># echo $name</span></span><br><span class="line">hello world</span><br><span class="line">[root@default-tpl vbird_shell]<span class="comment"># [ $name == "hello" ]</span></span><br><span class="line">-bash: [: too many arguments</span><br></pre></td></tr></table></figure>
 <p>一个例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line">read -p &quot;please input (Y/N):&quot; yn</span><br><span class="line"></span><br><span class="line">[ &quot;$yn&quot; == &quot;Y&quot; -o &quot;$yn&quot; == &quot;y&quot; ] &amp;&amp; echo &quot;ok, continue&quot; &amp;&amp; exit 0</span><br><span class="line">[ &quot;$yn&quot; == &quot;N&quot; -o &quot;$yn&quot; == &quot;n&quot; ] &amp;&amp; echo &quot;oh, interrupt&quot; &amp;&amp; exit 0</span><br><span class="line"></span><br><span class="line">echo &quot;I don&apos;t know what your choice is&quot; &amp;&amp; exit 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">"please input (Y/N):"</span> yn</span><br><span class="line"></span><br><span class="line">[ <span class="string">"<span class="variable">$yn</span>"</span> == <span class="string">"Y"</span> -o <span class="string">"<span class="variable">$yn</span>"</span> == <span class="string">"y"</span> ] &amp;&amp; <span class="built_in">echo</span> <span class="string">"ok, continue"</span> &amp;&amp; <span class="built_in">exit</span> 0</span><br><span class="line">[ <span class="string">"<span class="variable">$yn</span>"</span> == <span class="string">"N"</span> -o <span class="string">"<span class="variable">$yn</span>"</span> == <span class="string">"n"</span> ] &amp;&amp; <span class="built_in">echo</span> <span class="string">"oh, interrupt"</span> &amp;&amp; <span class="built_in">exit</span> 0</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"I don't know what your choice is"</span> &amp;&amp; <span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure>
 
       
     </div>
