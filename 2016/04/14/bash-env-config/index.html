@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux,bash," />
 
 
 
@@ -57,16 +57,28 @@
 
 
 
-<meta name="description" content="grep -l &amp;amp; grep -L-l, –files-with-matches  只打印匹配FILES 的文件名,用于在多个文件中,查询是否存在匹配的内容（与之对应的有参数-L, –files-without-match  只打印不匹配FILEs 的文件名）">
+<meta name="description" content="原文地址
+login 与 non-login shell
+login shell：取得 bash 时需要完整的登录流程的，就称为 login shell。举例来说，你要由 tty1 ~ tty6 登录，需要输入用户的账号与密码，此时取得的 bash 就称为 login shell；
+
+non-login shell：取得 bash 接口的方法不需要重复登录的举动，举例来说，(1)你以 X wind">
 <meta property="og:type" content="article">
-<meta property="og:title" content="review everyday">
-<meta property="og:url" content="http://yoursite.com/2016/03/16/review-everyday/index.html">
+<meta property="og:title" content="bash 的环境配置文件">
+<meta property="og:url" content="http://yoursite.com/2016/04/14/bash-env-config/index.html">
 <meta property="og:site_name" content="Joy's Life Canvas">
-<meta property="og:description" content="grep -l &amp;amp; grep -L-l, –files-with-matches  只打印匹配FILES 的文件名,用于在多个文件中,查询是否存在匹配的内容（与之对应的有参数-L, –files-without-match  只打印不匹配FILEs 的文件名）">
-<meta property="og:updated_time" content="2016-03-16T02:21:59.000Z">
+<meta property="og:description" content="原文地址
+login 与 non-login shell
+login shell：取得 bash 时需要完整的登录流程的，就称为 login shell。举例来说，你要由 tty1 ~ tty6 登录，需要输入用户的账号与密码，此时取得的 bash 就称为 login shell；
+
+non-login shell：取得 bash 接口的方法不需要重复登录的举动，举例来说，(1)你以 X wind">
+<meta property="og:updated_time" content="2016-04-15T06:24:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="review everyday">
-<meta name="twitter:description" content="grep -l &amp;amp; grep -L-l, –files-with-matches  只打印匹配FILES 的文件名,用于在多个文件中,查询是否存在匹配的内容（与之对应的有参数-L, –files-without-match  只打印不匹配FILEs 的文件名）">
+<meta name="twitter:title" content="bash 的环境配置文件">
+<meta name="twitter:description" content="原文地址
+login 与 non-login shell
+login shell：取得 bash 时需要完整的登录流程的，就称为 login shell。举例来说，你要由 tty1 ~ tty6 登录，需要输入用户的账号与密码，此时取得的 bash 就称为 login shell；
+
+non-login shell：取得 bash 接口的方法不需要重复登录的举动，举例来说，(1)你以 X wind">
 
 
 
@@ -84,7 +96,7 @@
   };
 </script>
 
-  <title> review everyday | Joy's Life Canvas </title>
+  <title> bash 的环境配置文件 | Joy's Life Canvas </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -234,7 +246,7 @@
             
             
               
-                review everyday
+                bash 的环境配置文件
               
             
           </h1>
@@ -246,11 +258,42 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-16T10:21:59+08:00" content="2016-03-16">
-              2016-03-16
+            <time itemprop="dateCreated" datetime="2016-04-14T22:03:56+08:00" content="2016-04-14">
+              2016-04-14
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/bash/" itemprop="url" rel="index">
+                    <span itemprop="name">bash</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -273,7 +316,34 @@
       
 
       
-        <h2 id="grep-l-amp-grep-L"><a href="#grep-l-amp-grep-L" class="headerlink" title="grep -l &amp; grep -L"></a>grep -l &amp; grep -L</h2><p>-l, –files-with-matches  只打印匹配FILES 的文件名,用于在多个文件中,查询是否存在匹配的内容（与之对应的有参数-L, –files-without-match  只打印不匹配FILEs 的文件名）</p>
+        <p><a href="http://vbird.dic.ksu.edu.tw/linux_basic/0320bash.php#settings_bashrc" target="_blank" rel="external">原文地址</a></p>
+<h2 id="login-与-non-login-shell"><a href="#login-与-non-login-shell" class="headerlink" title="login 与 non-login shell"></a>login 与 non-login shell</h2><ul>
+<li><p>login shell：取得 bash 时需要完整的登录流程的，就称为 login shell。举例来说，你要由 tty1 ~ tty6 登录，需要输入用户的账号与密码，此时取得的 bash 就称为 login shell；</p>
+</li>
+<li><p>non-login shell：取得 bash 接口的方法不需要重复登录的举动，举例来说，(1)你以 X window 登录 Linux 后， 再以 X 的图形化接口启动终端机，此时那个终端接口并没有需要再次的输入账号与密码，那个 bash 的环境就称为 non-login shell 了。(2)你在原本的 bash 环境下再次下达 bash 这个命令，同样的也没有输入账号密码， 那第二个 bash (子进程) 也是 non-login shell。</p>
+</li>
+</ul>
+<p>之所以要先知道 login shell 和 non-login shell，是因为它们取得 bash 的情况中，读取的配置文件数据并不一样。</p>
+<p>一般来说，login shell 其实只会读取这两个配置文件：</p>
+<ol>
+<li>/etc/profile：这是系统整体的配置，你最好不要修改这个文件；</li>
+<li>~/.bash_profile 或 ~/.bash_login 或 ~/.profile：属于使用者个人配置，你要改自己的数据，就修改这里！</li>
+</ol>
+<h2 id="etc-profile-login-shell-才会读"><a href="#etc-profile-login-shell-才会读" class="headerlink" title="/etc/profile (login shell 才会读)"></a>/etc/profile (login shell 才会读)</h2><p>这个文件是每个使用者登录取得 bash 时一定会读取的配置文件，所以如果你想要帮所有使用者配置整体环境，那就是改这里，不过，没事还是不要随便改这个文件。</p>
+<h2 id="bash-profile-login-shell-才会读"><a href="#bash-profile-login-shell-才会读" class="headerlink" title="~/.bash_profile (login shell 才会读)"></a>~/.bash_profile (login shell 才会读)</h2><p>bash 在读完了整体环境配置的 /etc/profile 后，接下来则是会读取使用者的个人配置文件。 在 login shell 的 bash 环境中，所读取的个人偏好配置文件其实主要有三个，依次分别是：</p>
+<ol>
+<li>~/.bash_profile</li>
+<li>~/.bash_login</li>
+<li>~/.profile</li>
+</ol>
+<p>其实 bash 的 login shell 配置只会读取上面三个文件的其中一个， 而读取的顺序则是依照上面的顺序。也就是说，如果 ~/.bash_profile 存在，那么其他两个文件不论有无存在，都不会被读取。 如果 ~/.bash_profile 不存在才会去读取 ~/.bash_login，而前两者都不存在才会读取 ~/.profile 的意思。 </p>
+<p>先让我们来看一下 root 的 /root/.bash_profile 的内容是怎样呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># .bash_profile</span><br><span class="line"></span><br><span class="line"># Get the aliases and functions</span><br><span class="line">if [ -f ~/.bashrc ]; then</span><br><span class="line">        . ~/.bashrc</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"># User specific environment and startup programs</span><br><span class="line"></span><br><span class="line">PATH=$PATH:$HOME/bin</span><br><span class="line"></span><br><span class="line">export PATH</span><br></pre></td></tr></table></figure>
+<p>该段的内容指的是: 判断家目录下的 ~/.bashrc 存在否，若存在则读入 ~/.bashrc 的配置。 bash 配置文件的读入方式比较有趣，主要是透过一个命令 source 来读取的，也就是说 ~/.bash_profile 其实会再呼叫 ~/.bashrc 的配置内容.</p>
+<h2 id="source-：读入环境配置文件的命令"><a href="#source-：读入环境配置文件的命令" class="headerlink" title="source ：读入环境配置文件的命令"></a>source ：读入环境配置文件的命令</h2><p>由于 /etc/profile 与 ~/.bash_profile 都是在取得 login shell 的时候才会读取的配置文件，所以，如果你将自己的偏好配置写入上述的文件后，通常都是得注销再登陆后，该配置才会生效。那么，能不能直接读取配置文件而不注销登陆呢？ 可以的！那就得要利用 source 这个命令了！</p>
+<p>利用 source 或小数点 (.) 都可以将配置文件的内容读进来目前的 shell 环境中！ 举例来说，我修改了 ~/.bashrc，那么不需要注销，立即以 source ~/.bashrc 就可以将刚刚最新配置的内容读进来目前的环境中，还有，包括 ~/bash_profile 以及 /etc/profile 的配置中，很多时候也都是利用到这个 source (或小数点) 的功能。</p>
+<h2 id="bashrc-non-login-shell-会读"><a href="#bashrc-non-login-shell-会读" class="headerlink" title="~/.bashrc (non-login shell 会读)"></a>~/.bashrc (non-login shell 会读)</h2><p>谈完了 login shell 后，那么 non-login shell 这种非登录情况取得 bash 操作接口的环境配置文件又是什么？ 当你取得 non-login shell 时，该 bash 配置文件仅会读取 ~/.bashrc 而已啦！那么默认的 ~/.bashrc 内容是如何？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># .bashrc</span><br><span class="line"></span><br><span class="line"># User specific aliases and functions</span><br><span class="line"></span><br><span class="line">alias rm=&apos;rm -i&apos;</span><br><span class="line">alias cp=&apos;cp -i&apos;</span><br><span class="line">alias mv=&apos;mv -i&apos;</span><br><span class="line"></span><br><span class="line"># Source global definitions</span><br><span class="line">if [ -f /etc/bashrc ]; then</span><br><span class="line">        . /etc/bashrc</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -286,21 +356,29 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+            <a href="/tags/bash/" rel="tag">#bash</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/16/linux-find/" rel="next" title="A collection of Unix/Linux find command examples">
-                <i class="fa fa-chevron-left"></i> A collection of Unix/Linux find command examples
+              <a href="/2016/04/06/the-c-programming-language_ch4/" rel="next" title="C程序设计语言--第四章">
+                <i class="fa fa-chevron-left"></i> C程序设计语言--第四章
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/25/the-c-programming-language/" rel="prev" title="C程序设计语言--第一章">
-                C程序设计语言--第一章 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/15/hexo-theme-next/" rel="prev" title="hexo help">
+                hexo help <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -419,7 +497,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#grep-l-amp-grep-L"><span class="nav-number">1.</span> <span class="nav-text">grep -l & grep -L</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#login-与-non-login-shell"><span class="nav-number">1.</span> <span class="nav-text">login 与 non-login shell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#etc-profile-login-shell-才会读"><span class="nav-number">2.</span> <span class="nav-text">/etc/profile (login shell 才会读)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bash-profile-login-shell-才会读"><span class="nav-number">3.</span> <span class="nav-text">~/.bash_profile (login shell 才会读)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-：读入环境配置文件的命令"><span class="nav-number">4.</span> <span class="nav-text">source ：读入环境配置文件的命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bashrc-non-login-shell-会读"><span class="nav-number">5.</span> <span class="nav-text">~/.bashrc (non-login shell 会读)</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
