@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux,shell," />
 
 
 
@@ -57,16 +57,19 @@
 
 
 
-<meta name="description" content="原文地址">
+<meta name="description" content="直接执行系统会提供一个子进程 bash 让我们让来执行 shell 脚本，当脚本执行完了之后，子进程中的所有数据便被删除。
+source方式当用 source 方式执行时，会在父进程中执行 shell 脚本，因此各项操作都会在父进程的 bash 内有效，这也是你不注销系统而要让某些写入 ~/.bashrc 的设置生效时，需要使用 source ~/.bashrc 而不能使用 bash ~/.bas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A collection of Unix/Linux find command examples">
-<meta property="og:url" content="http://yoursite.com/2016/03/16/linux-find/index.html">
+<meta property="og:title" content="shell script 的执行方式区别（source,sh script,./script）">
+<meta property="og:url" content="http://yoursite.com/2016/04/15/shell-script-exec-way-diff/index.html">
 <meta property="og:site_name" content="Joy's Life Canvas">
-<meta property="og:description" content="原文地址">
-<meta property="og:updated_time" content="2016-03-15T16:19:41.000Z">
+<meta property="og:description" content="直接执行系统会提供一个子进程 bash 让我们让来执行 shell 脚本，当脚本执行完了之后，子进程中的所有数据便被删除。
+source方式当用 source 方式执行时，会在父进程中执行 shell 脚本，因此各项操作都会在父进程的 bash 内有效，这也是你不注销系统而要让某些写入 ~/.bashrc 的设置生效时，需要使用 source ~/.bashrc 而不能使用 bash ~/.bas">
+<meta property="og:updated_time" content="2016-04-15T07:13:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="A collection of Unix/Linux find command examples">
-<meta name="twitter:description" content="原文地址">
+<meta name="twitter:title" content="shell script 的执行方式区别（source,sh script,./script）">
+<meta name="twitter:description" content="直接执行系统会提供一个子进程 bash 让我们让来执行 shell 脚本，当脚本执行完了之后，子进程中的所有数据便被删除。
+source方式当用 source 方式执行时，会在父进程中执行 shell 脚本，因此各项操作都会在父进程的 bash 内有效，这也是你不注销系统而要让某些写入 ~/.bashrc 的设置生效时，需要使用 source ~/.bashrc 而不能使用 bash ~/.bas">
 
 
 
@@ -84,7 +87,7 @@
   };
 </script>
 
-  <title> A collection of Unix/Linux find command examples | Joy's Life Canvas </title>
+  <title> shell script 的执行方式区别（source,sh script,./script） | Joy's Life Canvas </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -234,7 +237,7 @@
             
             
               
-                A collection of Unix/Linux find command examples
+                shell script 的执行方式区别（source,sh script,./script）
               
             
           </h1>
@@ -246,11 +249,42 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-16T00:19:41+08:00" content="2016-03-16">
-              2016-03-16
+            <time itemprop="dateCreated" datetime="2016-04-15T14:58:01+08:00" content="2016-04-15">
+              2016-04-15
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/shell/" itemprop="url" rel="index">
+                    <span itemprop="name">shell</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -273,7 +307,8 @@
       
 
       
-        <p><a href="http://alvinalexander.com/unix/edu/examples/find.shtml" target="_blank" rel="external">原文地址</a></p>
+        <h2 id="直接执行"><a href="#直接执行" class="headerlink" title="直接执行"></a>直接执行</h2><p>系统会提供一个子进程 bash 让我们让来执行 shell 脚本，当脚本执行完了之后，子进程中的所有数据便被删除。</p>
+<h2 id="source方式"><a href="#source方式" class="headerlink" title="source方式"></a>source方式</h2><p>当用 source 方式执行时，会在父进程中执行 shell 脚本，因此各项操作都会在父进程的 bash 内有效，这也是你不注销系统而要让某些写入 ~/.bashrc 的设置生效时，需要使用 source ~/.bashrc 而不能使用 bash ~/.bashrc 的原因。</p>
 
       
     </div>
@@ -286,22 +321,26 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+            <a href="/tags/shell/" rel="tag">#shell</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/16/locate-find/" rel="next" title="locate find">
-                <i class="fa fa-chevron-left"></i> locate find
+              <a href="/2016/04/15/hexo-theme-next/" rel="next" title="hexo help">
+                <i class="fa fa-chevron-left"></i> hexo help
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/16/review-everyday/" rel="prev" title="review everyday">
-                review everyday <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -419,7 +458,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#直接执行"><span class="nav-number">1.</span> <span class="nav-text">直接执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source方式"><span class="nav-number">2.</span> <span class="nav-text">source方式</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
