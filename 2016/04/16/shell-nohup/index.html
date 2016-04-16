@@ -58,24 +58,24 @@
 
 
 <meta name="description" content="原文地址
-1. &amp;amp;方式：Unix/Linux下一般想让某个程序在后台运行，很多都是使用 &amp;amp; 在程序结尾来让程序自动运行。比如我们要运行mysql在后台： 
+1. &amp;amp;方式：Unix/Linux 下一般想让某个程序在后台运行，很多都是使用 &amp;amp; 在程序结尾来让程序自动运行。比如我们要运行 mysql 在后台： 
 /usr/local/mysql/bin/mysqld_safe –user=mysql &amp;amp;
-2. nohup方式:但是我们很多程序并不像 mysqld 一样可以做成守护进程，可能我们的程序只是普通程序而已，一般这种程序">
+2. nohup方式:但是我们很多程序并不像 mysqld 一样可以做成守护进程，可能我们的程序只是普通程序而已，一般这">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nohup-真正的Shell后台运行">
 <meta property="og:url" content="http://yoursite.com/2016/04/16/shell-nohup/index.html">
 <meta property="og:site_name" content="Joy's Life Canvas">
 <meta property="og:description" content="原文地址
-1. &amp;amp;方式：Unix/Linux下一般想让某个程序在后台运行，很多都是使用 &amp;amp; 在程序结尾来让程序自动运行。比如我们要运行mysql在后台： 
+1. &amp;amp;方式：Unix/Linux 下一般想让某个程序在后台运行，很多都是使用 &amp;amp; 在程序结尾来让程序自动运行。比如我们要运行 mysql 在后台： 
 /usr/local/mysql/bin/mysqld_safe –user=mysql &amp;amp;
-2. nohup方式:但是我们很多程序并不像 mysqld 一样可以做成守护进程，可能我们的程序只是普通程序而已，一般这种程序">
-<meta property="og:updated_time" content="2016-04-16T07:48:35.000Z">
+2. nohup方式:但是我们很多程序并不像 mysqld 一样可以做成守护进程，可能我们的程序只是普通程序而已，一般这">
+<meta property="og:updated_time" content="2016-04-16T08:07:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nohup-真正的Shell后台运行">
 <meta name="twitter:description" content="原文地址
-1. &amp;amp;方式：Unix/Linux下一般想让某个程序在后台运行，很多都是使用 &amp;amp; 在程序结尾来让程序自动运行。比如我们要运行mysql在后台： 
+1. &amp;amp;方式：Unix/Linux 下一般想让某个程序在后台运行，很多都是使用 &amp;amp; 在程序结尾来让程序自动运行。比如我们要运行 mysql 在后台： 
 /usr/local/mysql/bin/mysqld_safe –user=mysql &amp;amp;
-2. nohup方式:但是我们很多程序并不像 mysqld 一样可以做成守护进程，可能我们的程序只是普通程序而已，一般这种程序">
+2. nohup方式:但是我们很多程序并不像 mysqld 一样可以做成守护进程，可能我们的程序只是普通程序而已，一般这">
 
 
 
@@ -326,19 +326,22 @@
 
       
         <p><a href="http://blog.csdn.net/taiyang1987912/article/details/39559087" target="_blank" rel="external">原文地址</a></p>
-<h2 id="1-amp-方式："><a href="#1-amp-方式：" class="headerlink" title="1. &amp;方式："></a>1. &amp;方式：</h2><p>Unix/Linux下一般想让某个程序在后台运行，很多都是使用 &amp; 在程序结尾来让程序自动运行。比如我们要运行mysql在后台： </p>
+<h2 id="1-amp-方式："><a href="#1-amp-方式：" class="headerlink" title="1. &amp;方式："></a>1. &amp;方式：</h2><p>Unix/Linux 下一般想让某个程序在后台运行，很多都是使用 &amp; 在程序结尾来让程序自动运行。比如我们要运行 mysql 在后台： </p>
 <p>/usr/local/mysql/bin/mysqld_safe –user=mysql &amp;</p>
 <h2 id="2-nohup方式"><a href="#2-nohup方式" class="headerlink" title="2. nohup方式:"></a>2. nohup方式:</h2><p>但是我们很多程序并不像 mysqld 一样可以做成守护进程，可能我们的程序只是普通程序而已，一般这种程序即使使用 &amp; 结尾，如果终端关闭，那么程序也会被关闭。为了能够后台运行，我们需要使用 nohup 这个命令，比如我们有个 start.sh 需要在后台运行，并且希望在后台能够一直运行，那么就使用 nohup： </p>
 <p>nohup /root/start.sh &amp; </p>
 <p>在 shell 中回车后提示：</p>
 <p>appending output to nohup.out </p>
 <p>原程序的的标准输出被自动改向到当前目录下的 nohup.out 文件，起到了log的作用。</p>
-<h2 id="3-nohup-问题"><a href="#3-nohup-问题" class="headerlink" title="3. nohup 问题"></a>3. nohup 问题</h2><p>但是有时候在这一步会有问题，当把终端关闭后，进程会自动被关闭，察看nohup.out可以看到在关闭终端瞬间服务自动关闭。</p>
-<p>有个操作终端时的细节：当 shell 中提示了 nohup 成功后还需要按终端上键盘任意键退回到 shell 输入命令窗口，然后通过在 shell 中输入 exit 来退出终端；而我是每次在 nohup 执行成功后直接点关闭程序按钮关闭终端。所以这时候会断掉该命令所对应的 session，导致 nohup 对应的进程被通知需要一起 shutdown。<br>这个细节有人和我一样没注意到，所以在这儿记录一下了。</p>
+<h2 id="3-nohup-问题"><a href="#3-nohup-问题" class="headerlink" title="3. nohup 问题"></a>3. nohup 问题</h2><p>但是有时候在这一步会有问题，当把终端关闭后，进程会自动被关闭，察看 nohup.out 可以看到在关闭终端瞬间服务自动关闭。</p>
+<p>有个操作终端时的细节：当 shell 中提示了 nohup 成功后还需要按终端上键盘任意键退回到 shell 输入命令窗口，然后通过在 shell 中输入 exit 来退出终端；而我是每次在 nohup 执行成功后直接点关闭程序按钮关闭终端。所以这时候会断掉该命令所对应的 session，导致 nohup 对应的进程被通知需要一起 shutdown。</p>
+<p>这个细节有人和我一样没注意到，所以在这儿记录一下了。</p>
 <h2 id="4-nohup-命令参考"><a href="#4-nohup-命令参考" class="headerlink" title="4. nohup 命令参考"></a>4. nohup 命令参考</h2><p>nohup 命令<br>用途：不挂断地运行命令。<br>语法：nohup Command [ Arg … ] [　&amp; ]<br>描述：nohup 命令运行由 Command 参数和任何相关的 Arg 参数指定的命令，忽略所有挂断（SIGHUP）信号。在注销后使用 nohup 命令运行后台中的程序。要运行后台中的 nohup 命令，添加 &amp; （ 表示”and”的符号）到命令的尾部。<br>　　<br>无论是否将 nohup 命令的输出重定向到终端，输出都将附加到当前目录的 nohup.out 文件中。如果当前目录的 nohup.out 文件不可写，输出重定向到 $HOME/nohup.out 文件中。如果没有文件能创建或打开以用于追加，那么 Command 参数指定的命令不可调用。如果标准错误是一个终端，那么把指定的命令写给标准错误的所有输出作为标准输出重定向到相同的文件描述符。<br>　　<br>退出状态：该命令返回下列出口值：<br> 　　<br>126 可以查找但不能调用 Command 参数指定的命令。<br>127 nohup 命令发生错误或不能查找由 Command 参数指定的命令。<br>否则，nohup 命令的退出状态是 Command 参数指定命令的退出状态。 </p>
 <p>　　<br>nohup命令及其输出文件</p>
 <p>nohup命令：如果你正在运行一个进程，而且你觉得在退出帐户时该进程还不会结束，那么可以使用nohup命令。该命令可以在你退出帐户/关闭终端之后继续运行相应的进程。nohup就是不挂起的意思( no hang up)。 </p>
-<p>该命令的一般形式为：nohup command &amp;<br>　<br>使用nohup命令提交作业<br>　　<br>如果使用nohup命令提交作业，那么在缺省情况下该作业的所有输出都被重定向到一个名为nohup.out的文件中，除非另外指定了输出文件：<br>　　<br>nohup command &gt; myout.file 2&gt;&amp;1 &amp;<br>　　<br>在上面的例子中，输出被重定向到myout.file文件中。<br>　　<br>使用 jobs 查看任务。<br>　　<br>使用 fg %n　关闭。<br>　　<br>另外有两个常用的ftp工具ncftpget和ncftpput，可以实现后台的ftp上传和下载，这样就可以利用这些命令在后台上传和下载文件了。</p>
+<p>该命令的一般形式为：nohup command &amp;<br>　<br>使用nohup命令提交作业<br>　　<br>如果使用nohup命令提交作业，那么在缺省情况下该作业的所有输出都被重定向到一个名为nohup.out的文件中，除非另外指定了输出文件：<br>　　<br>nohup command &gt; myout.file 2&gt;&amp;1 &amp;<br>　　<br>在上面的例子中，输出被重定向到myout.file文件中。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">linux shell下常用输入输出操作符是：</span><br><span class="line"></span><br><span class="line">1.  标准输入   (stdin) ：代码为 0，使用 &lt; 或 &lt;&lt;； /dev/stdin -&gt; /proc/self/fd/0   0代表：/dev/stdin </span><br><span class="line">2.  标准输出   (stdout)：代码为 1，使用 &gt; 或 &gt;&gt;； /dev/stdout -&gt; /proc/self/fd/1  1代表：/dev/stdout</span><br><span class="line">3.  标准错误输出(stderr)：代码为 2，使用 2&gt; 或 2&gt;&gt;； /dev/stderr -&gt; /proc/self/fd/2 2代表：/dev/stderr</span><br></pre></td></tr></table></figure>
+<p><a href="http://os.chinaunix.net/a2009/0903/996/000000996941.shtml" target="_blank" rel="external">linuxshell中”2&gt;&amp;1”含义</a><br>　　<br>使用 jobs 查看任务。<br>　　<br>使用 fg %n　关闭。<br>　　<br>另外有两个常用的ftp工具ncftpget和ncftpput，可以实现后台的ftp上传和下载，这样就可以利用这些命令在后台上传和下载文件了。</p>
 
       
     </div>
