@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux,shell,nohup," />
 
 
 
@@ -57,28 +57,25 @@
 
 
 
-<meta name="description" content="大标题二标题三标题四标题五标题六标题
-Do not go gentle into that good night. -Interstellar
-
-This is an H1This is an H2
-This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,consectetuer adipiscing elit. A">
+<meta name="description" content="原文地址
+1. &amp;amp;方式：Unix/Linux下一般想让某个程序在后台运行，很多都是使用 &amp;amp; 在程序结尾来让程序自动运行。比如我们要运行mysql在后台： 
+/usr/local/mysql/bin/mysqld_safe –user=mysql &amp;amp;
+2. nohup方式:但是我们很多程序并不像 mysqld 一样可以做成守护进程，可能我们的程序只是普通程序而已，一般这种程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="markdown learn">
-<meta property="og:url" content="http://yoursite.com/2016/03/15/markdown-learn/index.html">
+<meta property="og:title" content="nohup-真正的Shell后台运行">
+<meta property="og:url" content="http://yoursite.com/2016/04/16/shell-nohup/index.html">
 <meta property="og:site_name" content="Joy's Life Canvas">
-<meta property="og:description" content="大标题二标题三标题四标题五标题六标题
-Do not go gentle into that good night. -Interstellar
-
-This is an H1This is an H2
-This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,consectetuer adipiscing elit. A">
-<meta property="og:updated_time" content="2016-03-15T03:01:03.000Z">
+<meta property="og:description" content="原文地址
+1. &amp;amp;方式：Unix/Linux下一般想让某个程序在后台运行，很多都是使用 &amp;amp; 在程序结尾来让程序自动运行。比如我们要运行mysql在后台： 
+/usr/local/mysql/bin/mysqld_safe –user=mysql &amp;amp;
+2. nohup方式:但是我们很多程序并不像 mysqld 一样可以做成守护进程，可能我们的程序只是普通程序而已，一般这种程序">
+<meta property="og:updated_time" content="2016-04-16T07:48:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="markdown learn">
-<meta name="twitter:description" content="大标题二标题三标题四标题五标题六标题
-Do not go gentle into that good night. -Interstellar
-
-This is an H1This is an H2
-This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,consectetuer adipiscing elit. A">
+<meta name="twitter:title" content="nohup-真正的Shell后台运行">
+<meta name="twitter:description" content="原文地址
+1. &amp;amp;方式：Unix/Linux下一般想让某个程序在后台运行，很多都是使用 &amp;amp; 在程序结尾来让程序自动运行。比如我们要运行mysql在后台： 
+/usr/local/mysql/bin/mysqld_safe –user=mysql &amp;amp;
+2. nohup方式:但是我们很多程序并不像 mysqld 一样可以做成守护进程，可能我们的程序只是普通程序而已，一般这种程序">
 
 
 
@@ -96,7 +93,7 @@ This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,consectetue
   };
 </script>
 
-  <title> markdown learn | Joy's Life Canvas </title>
+  <title> nohup-真正的Shell后台运行 | Joy's Life Canvas </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +243,7 @@ This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,consectetue
             
             
               
-                markdown learn
+                nohup-真正的Shell后台运行
               
             
           </h1>
@@ -258,11 +255,54 @@ This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,consectetue
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-15T11:01:03+08:00" content="2016-03-15">
-              2016-03-15
+            <time itemprop="dateCreated" datetime="2016-04-16T15:37:18+08:00" content="2016-04-16">
+              2016-04-16
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/shell/" itemprop="url" rel="index">
+                    <span itemprop="name">shell</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/shell/nohup/" itemprop="url" rel="index">
+                    <span itemprop="name">nohup</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -285,51 +325,20 @@ This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,consectetue
       
 
       
-        <h1 id="大标题"><a href="#大标题" class="headerlink" title="大标题"></a>大标题</h1><h2 id="二标题"><a href="#二标题" class="headerlink" title="二标题"></a>二标题</h2><h3 id="三标题"><a href="#三标题" class="headerlink" title="三标题"></a>三标题</h3><h4 id="四标题"><a href="#四标题" class="headerlink" title="四标题"></a>四标题</h4><h5 id="五标题"><a href="#五标题" class="headerlink" title="五标题"></a>五标题</h5><h6 id="六标题"><a href="#六标题" class="headerlink" title="六标题"></a>六标题</h6><blockquote>
-<p>Do not go gentle into that good night. -Interstellar</p>
-</blockquote>
-<h1 id="This-is-an-H1"><a href="#This-is-an-H1" class="headerlink" title="This is an H1"></a>This is an H1</h1><h2 id="This-is-an-H2"><a href="#This-is-an-H2" class="headerlink" title="This is an H2"></a>This is an H2</h2><blockquote>
-<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,<br>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.<br>Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
-<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse<br>id sem consectetuer libero luctus adipiscing.</p>
-<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,<br>  consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.<br>  Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
-<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse<br>  id sem consectetuer libero luctus adipiscing.</p>
-</blockquote>
-<p> This is the first level of quoting.<br> &gt;</p>
-<blockquote>
-<blockquote>
-<p>This is nested blockquote.</p>
-</blockquote>
-<p>Back to the first level.</p>
-<h2 id="这是一个标题。"><a href="#这是一个标题。" class="headerlink" title="这是一个标题。"></a>这是一个标题。</h2><ol>
-<li>这是第一行列表项。</li>
-<li>这是第二行列表项。</li>
-</ol>
-<p>给出一些例子代码：</p>
-<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);
-</code></pre></blockquote>
-<p>无序列表使用星号、加号或是减号作为列表标记：</p>
-<ul>
-<li>Red</li>
-<li>Green</li>
-<li>Blue<br>等同于：</li>
-</ul>
-<ul>
-<li>Red</li>
-<li>Green</li>
-<li>Blue<br>也等同于：</li>
-</ul>
-<ul>
-<li>Red</li>
-<li>Green</li>
-<li>Blue<br>有序列表则使用数字接着一个英文句点：</li>
-</ul>
-<ol>
-<li>Bird</li>
-<li>McHale</li>
-<li>Parish</li>
-</ol>
-<p><em>斜体</em> <em>斜体</em></p>
-<p><strong>粗体</strong> <strong>粗体</strong></p>
+        <p><a href="http://blog.csdn.net/taiyang1987912/article/details/39559087" target="_blank" rel="external">原文地址</a></p>
+<h2 id="1-amp-方式："><a href="#1-amp-方式：" class="headerlink" title="1. &amp;方式："></a>1. &amp;方式：</h2><p>Unix/Linux下一般想让某个程序在后台运行，很多都是使用 &amp; 在程序结尾来让程序自动运行。比如我们要运行mysql在后台： </p>
+<p>/usr/local/mysql/bin/mysqld_safe –user=mysql &amp;</p>
+<h2 id="2-nohup方式"><a href="#2-nohup方式" class="headerlink" title="2. nohup方式:"></a>2. nohup方式:</h2><p>但是我们很多程序并不像 mysqld 一样可以做成守护进程，可能我们的程序只是普通程序而已，一般这种程序即使使用 &amp; 结尾，如果终端关闭，那么程序也会被关闭。为了能够后台运行，我们需要使用 nohup 这个命令，比如我们有个 start.sh 需要在后台运行，并且希望在后台能够一直运行，那么就使用 nohup： </p>
+<p>nohup /root/start.sh &amp; </p>
+<p>在 shell 中回车后提示：</p>
+<p>appending output to nohup.out </p>
+<p>原程序的的标准输出被自动改向到当前目录下的 nohup.out 文件，起到了log的作用。</p>
+<h2 id="3-nohup-问题"><a href="#3-nohup-问题" class="headerlink" title="3. nohup 问题"></a>3. nohup 问题</h2><p>但是有时候在这一步会有问题，当把终端关闭后，进程会自动被关闭，察看nohup.out可以看到在关闭终端瞬间服务自动关闭。</p>
+<p>有个操作终端时的细节：当 shell 中提示了 nohup 成功后还需要按终端上键盘任意键退回到 shell 输入命令窗口，然后通过在 shell 中输入 exit 来退出终端；而我是每次在 nohup 执行成功后直接点关闭程序按钮关闭终端。所以这时候会断掉该命令所对应的 session，导致 nohup 对应的进程被通知需要一起 shutdown。<br>这个细节有人和我一样没注意到，所以在这儿记录一下了。</p>
+<h2 id="4-nohup-命令参考"><a href="#4-nohup-命令参考" class="headerlink" title="4. nohup 命令参考"></a>4. nohup 命令参考</h2><p>nohup 命令<br>用途：不挂断地运行命令。<br>语法：nohup Command [ Arg … ] [　&amp; ]<br>描述：nohup 命令运行由 Command 参数和任何相关的 Arg 参数指定的命令，忽略所有挂断（SIGHUP）信号。在注销后使用 nohup 命令运行后台中的程序。要运行后台中的 nohup 命令，添加 &amp; （ 表示”and”的符号）到命令的尾部。<br>　　<br>无论是否将 nohup 命令的输出重定向到终端，输出都将附加到当前目录的 nohup.out 文件中。如果当前目录的 nohup.out 文件不可写，输出重定向到 $HOME/nohup.out 文件中。如果没有文件能创建或打开以用于追加，那么 Command 参数指定的命令不可调用。如果标准错误是一个终端，那么把指定的命令写给标准错误的所有输出作为标准输出重定向到相同的文件描述符。<br>　　<br>退出状态：该命令返回下列出口值：<br> 　　<br>126 可以查找但不能调用 Command 参数指定的命令。<br>127 nohup 命令发生错误或不能查找由 Command 参数指定的命令。<br>否则，nohup 命令的退出状态是 Command 参数指定命令的退出状态。 </p>
+<p>　　<br>nohup命令及其输出文件</p>
+<p>nohup命令：如果你正在运行一个进程，而且你觉得在退出帐户时该进程还不会结束，那么可以使用nohup命令。该命令可以在你退出帐户/关闭终端之后继续运行相应的进程。nohup就是不挂起的意思( no hang up)。 </p>
+<p>该命令的一般形式为：nohup command &amp;<br>　<br>使用nohup命令提交作业<br>　　<br>如果使用nohup命令提交作业，那么在缺省情况下该作业的所有输出都被重定向到一个名为nohup.out的文件中，除非另外指定了输出文件：<br>　　<br>nohup command &gt; myout.file 2&gt;&amp;1 &amp;<br>　　<br>在上面的例子中，输出被重定向到myout.file文件中。<br>　　<br>使用 jobs 查看任务。<br>　　<br>使用 fg %n　关闭。<br>　　<br>另外有两个常用的ftp工具ncftpget和ncftpput，可以实现后台的ftp上传和下载，这样就可以利用这些命令在后台上传和下载文件了。</p>
 
       
     </div>
@@ -342,22 +351,28 @@ This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,consectetue
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+            <a href="/tags/shell/" rel="tag">#shell</a>
+          
+            <a href="/tags/nohup/" rel="tag">#nohup</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/12/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/04/15/all-kinds-of-kuohao/" rel="next" title="shell中各种括号的作用()、(())、[]、[[]]、{} todo">
+                <i class="fa fa-chevron-left"></i> shell中各种括号的作用()、(())、[]、[[]]、{} todo
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/15/gfm/" rel="prev" title="GFM">
-                GFM <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -475,7 +490,7 @@ This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,consectetue
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#大标题"><span class="nav-number">1.</span> <span class="nav-text">大标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二标题"><span class="nav-number">1.1.</span> <span class="nav-text">二标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三标题"><span class="nav-number">1.1.1.</span> <span class="nav-text">三标题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#四标题"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">四标题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#五标题"><span class="nav-number">1.1.1.1.1.</span> <span class="nav-text">五标题</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#六标题"><span class="nav-number">1.1.1.1.1.1.</span> <span class="nav-text">六标题</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#This-is-an-H1"><span class="nav-number">2.</span> <span class="nav-text">This is an H1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#This-is-an-H2"><span class="nav-number">2.1.</span> <span class="nav-text">This is an H2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这是一个标题。"><span class="nav-number">2.2.</span> <span class="nav-text">这是一个标题。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-amp-方式："><span class="nav-number">1.</span> <span class="nav-text">1. &方式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-nohup方式"><span class="nav-number">2.</span> <span class="nav-text">2. nohup方式:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-nohup-问题"><span class="nav-number">3.</span> <span class="nav-text">3. nohup 问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-nohup-命令参考"><span class="nav-number">4.</span> <span class="nav-text">4. nohup 命令参考</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
