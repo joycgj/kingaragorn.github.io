@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux,shell,alvinalexander,tar,xargs," />
 
 
 
@@ -57,19 +57,22 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="原文地址
+This morning I decided to take a few minutes to backup all the songs I’ve purchased over the last half-year. These are all on my Mac OS X system, under the Music folder in my home directory.
+The">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2016/03/12/hello-world/index.html">
+<meta property="og:title" content="handling-spaces-in-filenames-with-find-tar-and-xargs">
+<meta property="og:url" content="http://yoursite.com/2016/04/17/handling-spaces-in-filenames-with-find-tar-and-xargs/index.html">
 <meta property="og:site_name" content="Joy's Life Canvas">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-03-12T06:45:23.000Z">
+<meta property="og:description" content="原文地址
+This morning I decided to take a few minutes to backup all the songs I’ve purchased over the last half-year. These are all on my Mac OS X system, under the Music folder in my home directory.
+The">
+<meta property="og:updated_time" content="2016-04-17T06:47:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="handling-spaces-in-filenames-with-find-tar-and-xargs">
+<meta name="twitter:description" content="原文地址
+This morning I decided to take a few minutes to backup all the songs I’ve purchased over the last half-year. These are all on my Mac OS X system, under the Music folder in my home directory.
+The">
 
 
 
@@ -87,7 +90,7 @@ Quick">
   };
 </script>
 
-  <title> Hello World | Joy's Life Canvas </title>
+  <title> handling-spaces-in-filenames-with-find-tar-and-xargs | Joy's Life Canvas </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -237,7 +240,7 @@ Quick">
             
             
               
-                Hello World
+                handling-spaces-in-filenames-with-find-tar-and-xargs
               
             
           </h1>
@@ -249,11 +252,54 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-12T14:45:23+08:00" content="2016-03-12">
-              2016-03-12
+            <time itemprop="dateCreated" datetime="2016-04-17T14:41:26+08:00" content="2016-04-17">
+              2016-04-17
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/shell/" itemprop="url" rel="index">
+                    <span itemprop="name">shell</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/shell/alvinalexander/" itemprop="url" rel="index">
+                    <span itemprop="name">alvinalexander</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -276,15 +322,39 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p><a href="http://alvinalexander.com/mac-os-x/mac-backup-filename-directories-spaces-find-tar-xargs" target="_blank" rel="external">原文地址</a></p>
+<p>This morning I decided to take a few minutes to backup all the songs I’ve purchased over the last half-year. These are all on my Mac OS X system, under the Music folder in my home directory.</p>
+<p>The problem with trying to do this with standard Unix tools is that all these subdirectories and filenames have spaces in their names. Just looking at the Music folder, it contains many directory names like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Willie Nelson &amp; Merle Haggard</span><br></pre></td></tr></table></figure>
+<p>If you know Unix, you know spaces in directory and filenames wreaks havoc with Unix tools. Fortunately we can get around this problem on Mac OS X systems, as you’ll see here.</p>
+<h2 id="A-find-tar-command-to-handle-spaces"><a href="#A-find-tar-command-to-handle-spaces" class="headerlink" title="A find + tar command to handle spaces"></a>A <code>find</code> + <code>tar</code> command to handle spaces</h2><p>After opening a Mac Terminal window and changing to the Music folder on my computer (/Users/Al/Music), all I needed was this one command to create a tar file of all the songs on my system that have been modified in the last 180 days (which is essentially six months):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name -type f &apos;*.mp3&apos; -mtime -180 -print0 | xargs -0 tar rvf music.tar</span><br></pre></td></tr></table></figure>
+<p>This command successfully created the file named music.tar, which I just copied to another Mac and tested there.</p>
+<p>The important part of this solution is that it shows how to handle spaces in filenames and directory names when using the find and tar commands. The secret is using the find command’s -print0 option, and the -0 argument for xargs, both of which are explained below.</p>
+<h2 id="Breaking-the-commands-down"><a href="#Breaking-the-commands-down" class="headerlink" title="Breaking the commands down"></a>Breaking the commands down</h2><p>What this find command means:</p>
+<ul>
+<li>find is the Unix find command</li>
+<li>-type f means just look for files</li>
+<li>-name ‘*.mp3’ means any filename that ends with ‘.mp3’</li>
+<li>-mtime -180 means only return files that have been modified in the last 180 days</li>
+<li>-print0 is a find option specifically meant to work with xargs (see below)</li>
+<li><p>Here’s what the xargs and tar commands mean:</p>
+</li>
+<li><p>xargs is a Unix command that can read long argument lists and feed them to whatever other program you like, in this case the tar command. (see below for more)</p>
+</li>
+<li>-0 tells xargs to expect NUL characters as line separators</li>
+<li>tar is the standard Unix and Linux “tape archive” utility, used mostly these days to create backup files</li>
+<li>‘r’ both creates and then appends to the filename</li>
+<li>‘v’ means verbose, and shows me the filenames as they are written to the output file</li>
+<li>‘f’ is used to specify the filename that follows (music.tar)</li>
+</ul>
+<p><strong>The xargs command is often used when you have a lot of input that would normally be sent to a command like tar, but tar can’t handle all that input at once. xargs specializes in taking the input, finding each line in the input, and then sending the lines — one at a time — to the command you specify, which is that tar command in this example.</strong></p>
+<h2 id="Using-“find-print0”-and-“xargs-0”-together"><a href="#Using-“find-print0”-and-“xargs-0”-together" class="headerlink" title="Using “find -print0” and “xargs -0” together"></a>Using “find -print0” and “xargs -0” together</h2><p>The “find -print0” and “xargs -0” options are expected to be used together. Here is some documentation from the man pages on these two commands that explains this.</p>
+<p>First, some information on the find command’s print0 option:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">This primary always evaluates to true. It prints the pathname </span><br><span class="line">of the current file to standard output, followed by an ASCII NUL</span><br><span class="line">character (character code 0).</span><br><span class="line"></span><br><span class="line">(good to use with &quot;xargs -0&quot;)</span><br></pre></td></tr></table></figure>
+<p>And here’s some information on the xargs -0 option:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Change xargs to expect NUL (&quot;\0&quot;) characters as separators, </span><br><span class="line">instead of spaces and newlines. This is expected to be used </span><br><span class="line">in concert with the -print0 function in find.</span><br></pre></td></tr></table></figure>
+<h2 id="Mac-backups-find-tar-and-spaces-Summary"><a href="#Mac-backups-find-tar-and-spaces-Summary" class="headerlink" title="Mac backups, find, tar, and spaces - Summary"></a>Mac backups, find, tar, and spaces - Summary</h2><p>I hope this tip on backing up files and directories with spaces in their names has been helpful. As you have seen, with a little tweaking, the find, tar, and xargs commands can help you create a tar backup of your Music, and any other content with spaces in their file and directory names.</p>
 
       
     </div>
@@ -297,18 +367,32 @@ Quick">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+            <a href="/tags/shell/" rel="tag">#shell</a>
+          
+            <a href="/tags/alvinalexander/" rel="tag">#alvinalexander</a>
+          
+            <a href="/tags/tar/" rel="tag">#tar</a>
+          
+            <a href="/tags/xargs/" rel="tag">#xargs</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/04/17/a-collection-of-find-command-examples/" rel="next" title="A collection of Unix/Linux find command examples">
+                <i class="fa fa-chevron-left"></i> A collection of Unix/Linux find command examples
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/15/markdown-learn/" rel="prev" title="markdown learn">
-                markdown learn <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -426,7 +510,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-find-tar-command-to-handle-spaces"><span class="nav-number">1.</span> <span class="nav-text">A find + tar command to handle spaces</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Breaking-the-commands-down"><span class="nav-number">2.</span> <span class="nav-text">Breaking the commands down</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-“find-print0”-and-“xargs-0”-together"><span class="nav-number">3.</span> <span class="nav-text">Using “find -print0” and “xargs -0” together</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mac-backups-find-tar-and-spaces-Summary"><span class="nav-number">4.</span> <span class="nav-text">Mac backups, find, tar, and spaces - Summary</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
