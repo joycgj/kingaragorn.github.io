@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux,shell,debug," />
 
 
 
@@ -57,22 +57,19 @@
 
 
 
-<meta name="description" content="原文地址
-locatelocate这个命令是对其生成的数据库进行遍历（生成数据库的命令：updatedb）,这一特性决定了用locate查找文件速度很快，但是locate命令只能对文件进行模糊匹配，在精确度上来说差了点，简单介绍下它的两个选项：
-12-i  //查找文件的时候不区分大小写,比如：locate  –i   passwd-n  //只显示查找结果的前N行,比如：locate  -n">
+<meta name="description" content="语法12345sh [-nvx] scripts.sh-n : 不要执行 script, 仅查询语法的问题;-v : 在执行 script 前, 先将 script 的内容输出到屏幕上;-x : 将使用到的 script 内容显示到屏幕上，这是很有用的参数;
+shell script forseq.sh123456#!/bin/shfor animal in dog cat elephantdo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="locate find">
-<meta property="og:url" content="http://yoursite.com/2016/03/16/locate-find/index.html">
+<meta property="og:title" content="shell script 的追踪与调试">
+<meta property="og:url" content="http://yoursite.com/2016/04/17/shell-debug/index.html">
 <meta property="og:site_name" content="Joy's Life Canvas">
-<meta property="og:description" content="原文地址
-locatelocate这个命令是对其生成的数据库进行遍历（生成数据库的命令：updatedb）,这一特性决定了用locate查找文件速度很快，但是locate命令只能对文件进行模糊匹配，在精确度上来说差了点，简单介绍下它的两个选项：
-12-i  //查找文件的时候不区分大小写,比如：locate  –i   passwd-n  //只显示查找结果的前N行,比如：locate  -n">
-<meta property="og:updated_time" content="2016-03-15T16:17:44.000Z">
+<meta property="og:description" content="语法12345sh [-nvx] scripts.sh-n : 不要执行 script, 仅查询语法的问题;-v : 在执行 script 前, 先将 script 的内容输出到屏幕上;-x : 将使用到的 script 内容显示到屏幕上，这是很有用的参数;
+shell script forseq.sh123456#!/bin/shfor animal in dog cat elephantdo">
+<meta property="og:updated_time" content="2016-04-17T04:55:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="locate find">
-<meta name="twitter:description" content="原文地址
-locatelocate这个命令是对其生成的数据库进行遍历（生成数据库的命令：updatedb）,这一特性决定了用locate查找文件速度很快，但是locate命令只能对文件进行模糊匹配，在精确度上来说差了点，简单介绍下它的两个选项：
-12-i  //查找文件的时候不区分大小写,比如：locate  –i   passwd-n  //只显示查找结果的前N行,比如：locate  -n">
+<meta name="twitter:title" content="shell script 的追踪与调试">
+<meta name="twitter:description" content="语法12345sh [-nvx] scripts.sh-n : 不要执行 script, 仅查询语法的问题;-v : 在执行 script 前, 先将 script 的内容输出到屏幕上;-x : 将使用到的 script 内容显示到屏幕上，这是很有用的参数;
+shell script forseq.sh123456#!/bin/shfor animal in dog cat elephantdo">
 
 
 
@@ -90,7 +87,7 @@ locatelocate这个命令是对其生成的数据库进行遍历（生成数据�
   };
 </script>
 
-  <title> locate find | Joy's Life Canvas </title>
+  <title> shell script 的追踪与调试 | Joy's Life Canvas </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -240,7 +237,7 @@ locatelocate这个命令是对其生成的数据库进行遍历（生成数据�
             
             
               
-                locate find
+                shell script 的追踪与调试
               
             
           </h1>
@@ -252,11 +249,54 @@ locatelocate这个命令是对其生成的数据库进行遍历（生成数据�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-16T00:17:44+08:00" content="2016-03-16">
-              2016-03-16
+            <time itemprop="dateCreated" datetime="2016-04-17T12:46:43+08:00" content="2016-04-17">
+              2016-04-17
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/shell/" itemprop="url" rel="index">
+                    <span itemprop="name">shell</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/shell/debug/" itemprop="url" rel="index">
+                    <span itemprop="name">debug</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -279,26 +319,9 @@ locatelocate这个命令是对其生成的数据库进行遍历（生成数据�
       
 
       
-        <p><a href="http://blog.chinaunix.net/uid-24648486-id-2998767" target="_blank" rel="external">原文地址</a></p>
-<h2 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h2><p>locate这个命令是对其生成的数据库进行遍历（生成数据库的命令：updatedb）,这一特性决定了用locate查找文件速度很快，但是locate命令只能对文件进行模糊匹配，在精确度上来说差了点，简单介绍下它的两个选项：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-i  //查找文件的时候不区分大小写,比如：locate  –i   passwd</span><br><span class="line">-n  //只显示查找结果的前N行,比如：locate  -n  5   passwd</span><br></pre></td></tr></table></figure>
-<h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><p>find在不指定查找目录的情况下是对整个系统进行遍历查找</p>
-<p>使用格式 ：   find  [指定查找目录]  [查找规则]  [查找完后执行的action]</p>
-<h3 id="查找规则"><a href="#查找规则" class="headerlink" title="查找规则"></a>查找规则</h3><h4 id="根据文件名查找"><a href="#根据文件名查找" class="headerlink" title="根据文件名查找"></a>根据文件名查找</h4><pre><code>-name   // 根据文件名查找（精确查找）
--iname  // 根据文件名查找，但是不区分大小写
-
-find /etc -name passwd
-
-/etc/passwd
-/etc/pam.d/passwd
-</code></pre><h4 id="根据文件所属用户和组来查找文件"><a href="#根据文件所属用户和组来查找文件" class="headerlink" title="根据文件所属用户和组来查找文件"></a>根据文件所属用户和组来查找文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-user         //根据属主来查找文件</span><br><span class="line">-group        //根据属组来查找文件</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f // 普通文件</span><br><span class="line">d // 目录文件</span><br><span class="line">l // 链接文件</span><br><span class="line">b // 块设备文件</span><br><span class="line">c // 字符设备文件</span><br><span class="line">p // 管道文件</span><br><span class="line">s // socket文件</span><br></pre></td></tr></table></figure>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sh [-nvx] scripts.sh</span><br><span class="line"></span><br><span class="line">-n : 不要执行 script, 仅查询语法的问题;</span><br><span class="line">-v : 在执行 script 前, 先将 script 的内容输出到屏幕上;</span><br><span class="line">-x : 将使用到的 script 内容显示到屏幕上，这是很有用的参数;</span><br></pre></td></tr></table></figure>
+<h2 id="shell-script-forseq-sh"><a href="#shell-script-forseq-sh" class="headerlink" title="shell script forseq.sh"></a>shell script forseq.sh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line"><span class="keyword">for</span> animal <span class="keyword">in</span> dog cat elephant</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"There are <span class="variable">$&#123;animal&#125;</span>s..."</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">$ sh -n forseq.sh</span><br><span class="line"># 若语法没有问题，则不会显示任何信息</span><br><span class="line"></span><br><span class="line">$ sh -v forseq.sh</span><br><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line">for animal in dog cat elephant</span><br><span class="line">do</span><br><span class="line">    echo &quot;There are $&#123;animal&#125;s...&quot;</span><br><span class="line">done</span><br><span class="line">There are dogs...</span><br><span class="line">There are cats...</span><br><span class="line">There are elephants...</span><br><span class="line"></span><br><span class="line">$ sh -x forseq.sh</span><br><span class="line">+ for animal in dog cat elephant</span><br><span class="line">+ echo &apos;There are dogs...&apos;</span><br><span class="line">There are dogs...</span><br><span class="line">+ for animal in dog cat elephant</span><br><span class="line">+ echo &apos;There are cats...&apos;</span><br><span class="line">There are cats...</span><br><span class="line">+ for animal in dog cat elephant</span><br><span class="line">+ echo &apos;There are elephants...&apos;</span><br><span class="line">There are elephants...</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -311,22 +334,28 @@ find /etc -name passwd
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+            <a href="/tags/shell/" rel="tag">#shell</a>
+          
+            <a href="/tags/debug/" rel="tag">#debug</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/15/gfm/" rel="next" title="GFM">
-                <i class="fa fa-chevron-left"></i> GFM
+              <a href="/2016/04/16/shell-nohup/" rel="next" title="nohup-真正的Shell后台运行">
+                <i class="fa fa-chevron-left"></i> nohup-真正的Shell后台运行
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/16/linux-find/" rel="prev" title="A collection of Unix/Linux find command examples">
-                A collection of Unix/Linux find command examples <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -444,7 +473,7 @@ find /etc -name passwd
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#locate"><span class="nav-number">1.</span> <span class="nav-text">locate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#find"><span class="nav-number">2.</span> <span class="nav-text">find</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查找规则"><span class="nav-number">2.1.</span> <span class="nav-text">查找规则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#根据文件名查找"><span class="nav-number">2.1.1.</span> <span class="nav-text">根据文件名查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据文件所属用户和组来查找文件"><span class="nav-number">2.1.2.</span> <span class="nav-text">根据文件所属用户和组来查找文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">2.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">2.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">2.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shell-script-forseq-sh"><span class="nav-number">2.</span> <span class="nav-text">shell script forseq.sh</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
