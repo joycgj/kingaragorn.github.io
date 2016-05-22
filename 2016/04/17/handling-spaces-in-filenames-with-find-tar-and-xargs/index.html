@@ -67,7 +67,7 @@ The">
 <meta property="og:description" content="原文地址
 This morning I decided to take a few minutes to backup all the songs I’ve purchased over the last half-year. These are all on my Mac OS X system, under the Music folder in my home directory.
 The">
-<meta property="og:updated_time" content="2016-05-22T09:57:29.000Z">
+<meta property="og:updated_time" content="2016-05-22T10:01:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac backups - handling spaces in filenames with find, tar, and xargs">
 <meta name="twitter:description" content="原文地址
@@ -325,10 +325,8 @@ The">
         <p><a href="http://alvinalexander.com/mac-os-x/mac-backup-filename-directories-spaces-find-tar-xargs" target="_blank" rel="external">原文地址</a></p>
 <p>This morning I decided to take a few minutes to backup all the songs I’ve purchased over the last half-year. These are all on my Mac OS X system, under the Music folder in my home directory.</p>
 <p>The problem with trying to do this with standard Unix tools is that all these subdirectories and filenames have spaces in their names. Just looking at the Music folder, it contains many directory names like this:</p>
-<blockquote>
-<p>Willie Nelson &amp; Merle Haggard</p>
-</blockquote>
-<p>If you know Unix, you know spaces in directory and filenames wreaks havoc with Unix tools. Fortunately we can get around this problem on Mac OS X systems, as you’ll see here.</p>
+<pre><code>Willie Nelson &amp; Merle Haggard
+</code></pre><p>If you know Unix, you know spaces in directory and filenames wreaks havoc with Unix tools. Fortunately we can get around this problem on Mac OS X systems, as you’ll see here.</p>
 <h2 id="A-find-tar-command-to-handle-spaces"><a href="#A-find-tar-command-to-handle-spaces" class="headerlink" title="A find + tar command to handle spaces"></a>A <code>find</code> + <code>tar</code> command to handle spaces</h2><p>After opening a Mac Terminal window and changing to the Music folder on my computer (/Users/Al/Music), all I needed was this one command to create a tar file of all the songs on my system that have been modified in the last 180 days (which is essentially six months):</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name -type f &apos;*.mp3&apos; -mtime -180 -print0 | xargs -0 tar rvf music.tar</span><br></pre></td></tr></table></figure>
 <p>This command successfully created the file named music.tar, which I just copied to another Mac and tested there.</p>
