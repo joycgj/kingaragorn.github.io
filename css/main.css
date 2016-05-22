@@ -185,8 +185,8 @@ th {
 }
 body {
   position: relative;
-  font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 14px;
+  font-family: "Microsoft YaHei", Verdana, sans-serif;
+  font-size: 16px;
   line-height: 2;
   color: #555;
   background: #fff;
@@ -216,7 +216,7 @@ h6 {
   padding: 0;
   font-weight: bold;
   line-height: 1.5;
-  font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: Georgia, sans;
 }
 h2,
 h3,
@@ -595,7 +595,7 @@ pre code {
 .gist .gist-file .gist-meta {
   background: #f7f7f7;
   color: #8e908c;
-  font: 13px Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font: 13px "Microsoft YaHei", Verdana, sans-serif;
   text-shadow: 0 0;
   padding: 0;
   margin-top: 1em;
@@ -1043,7 +1043,7 @@ pre .javascript .function {
 .post-body .figure .caption {
   margin: 10px auto 15px;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   color: #999;
   font-weight: bold;
   line-height: 1;
@@ -1544,7 +1544,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #dfc;
+  background: #01ffad;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -2332,7 +2332,7 @@ hr {
 }
 .post-more-link a {
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
   background: none;
   border: none;
