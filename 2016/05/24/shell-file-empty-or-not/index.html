@@ -57,19 +57,19 @@
 
 
 
-<meta name="description" content="直接执行系统会提供一个子进程 bash 让我们让来执行 shell 脚本，当脚本执行完了之后，子进程中的所有数据便被删除。
-source方式当用 source 方式执行时，会在父进程中执行 shell 脚本，因此各项操作都会在父进程的 bash 内有效，这也是你不注销系统而要让某些写入 ~/.bashrc 的设置生效时，需要使用 source ~/.bashrc 而不能使用 bash ~/.bas">
+<meta name="description" content="在 Linux 中写脚本的时候，总免不了需要判断文件是否存在、文件内容是否为空等存在，而这些操作都可以用 test 指令来实现，通过 man test 指令可以查看关于test指令的手册，手册中有如下说明： 
+12345678910111213141516171819-s FILE              FILE exists and has a size greater than zero">
 <meta property="og:type" content="article">
-<meta property="og:title" content="shell script 的执行方式区别（source,sh script,./script）">
-<meta property="og:url" content="http://yoursite.com/2016/04/15/shell-script-exec-way-diff/index.html">
+<meta property="og:title" content="如何在shell中判断一个文件是否为空">
+<meta property="og:url" content="http://yoursite.com/2016/05/24/shell-file-empty-or-not/index.html">
 <meta property="og:site_name" content="Joy's Life Canvas">
-<meta property="og:description" content="直接执行系统会提供一个子进程 bash 让我们让来执行 shell 脚本，当脚本执行完了之后，子进程中的所有数据便被删除。
-source方式当用 source 方式执行时，会在父进程中执行 shell 脚本，因此各项操作都会在父进程的 bash 内有效，这也是你不注销系统而要让某些写入 ~/.bashrc 的设置生效时，需要使用 source ~/.bashrc 而不能使用 bash ~/.bas">
-<meta property="og:updated_time" content="2016-04-15T07:13:36.000Z">
+<meta property="og:description" content="在 Linux 中写脚本的时候，总免不了需要判断文件是否存在、文件内容是否为空等存在，而这些操作都可以用 test 指令来实现，通过 man test 指令可以查看关于test指令的手册，手册中有如下说明： 
+12345678910111213141516171819-s FILE              FILE exists and has a size greater than zero">
+<meta property="og:updated_time" content="2016-05-24T15:45:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="shell script 的执行方式区别（source,sh script,./script）">
-<meta name="twitter:description" content="直接执行系统会提供一个子进程 bash 让我们让来执行 shell 脚本，当脚本执行完了之后，子进程中的所有数据便被删除。
-source方式当用 source 方式执行时，会在父进程中执行 shell 脚本，因此各项操作都会在父进程的 bash 内有效，这也是你不注销系统而要让某些写入 ~/.bashrc 的设置生效时，需要使用 source ~/.bashrc 而不能使用 bash ~/.bas">
+<meta name="twitter:title" content="如何在shell中判断一个文件是否为空">
+<meta name="twitter:description" content="在 Linux 中写脚本的时候，总免不了需要判断文件是否存在、文件内容是否为空等存在，而这些操作都可以用 test 指令来实现，通过 man test 指令可以查看关于test指令的手册，手册中有如下说明： 
+12345678910111213141516171819-s FILE              FILE exists and has a size greater than zero">
 
 
 
@@ -87,7 +87,7 @@ source方式当用 source 方式执行时，会在父进程中执行 shell 脚�
   };
 </script>
 
-  <title> shell script 的执行方式区别（source,sh script,./script） | Joy's Life Canvas </title>
+  <title> 如何在shell中判断一个文件是否为空 | Joy's Life Canvas </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -237,7 +237,7 @@ source方式当用 source 方式执行时，会在父进程中执行 shell 脚�
             
             
               
-                shell script 的执行方式区别（source,sh script,./script）
+                如何在shell中判断一个文件是否为空
               
             
           </h1>
@@ -249,8 +249,8 @@ source方式当用 source 方式执行时，会在父进程中执行 shell 脚�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-15T14:58:01+08:00" content="2016-04-15">
-              2016-04-15
+            <time itemprop="dateCreated" datetime="2016-05-24T23:39:18+08:00" content="2016-05-24">
+              2016-05-24
             </time>
           </span>
 
@@ -291,8 +291,8 @@ source方式当用 source 方式执行时，会在父进程中执行 shell 脚�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/15/shell-script-exec-way-diff/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/15/shell-script-exec-way-diff/" itemprop="commentsCount"></span>
+                <a href="/2016/05/24/shell-file-empty-or-not/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/24/shell-file-empty-or-not/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -302,7 +302,7 @@ source方式当用 source 方式执行时，会在父进程中执行 shell 脚�
 
           
           
-             <span id="/2016/04/15/shell-script-exec-way-diff/" class="leancloud_visitors" data-flag-title="shell script 的执行方式区别（source,sh script,./script）">
+             <span id="/2016/05/24/shell-file-empty-or-not/" class="leancloud_visitors" data-flag-title="如何在shell中判断一个文件是否为空">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -323,8 +323,11 @@ source方式当用 source 方式执行时，会在父进程中执行 shell 脚�
       
 
       
-        <h2 id="直接执行"><a href="#直接执行" class="headerlink" title="直接执行"></a>直接执行</h2><p>系统会提供一个子进程 bash 让我们让来执行 shell 脚本，当脚本执行完了之后，子进程中的所有数据便被删除。</p>
-<h2 id="source方式"><a href="#source方式" class="headerlink" title="source方式"></a>source方式</h2><p>当用 source 方式执行时，会在父进程中执行 shell 脚本，因此各项操作都会在父进程的 bash 内有效，这也是你不注销系统而要让某些写入 ~/.bashrc 的设置生效时，需要使用 source ~/.bashrc 而不能使用 bash ~/.bashrc 的原因。</p>
+        <p>在 Linux 中写脚本的时候，总免不了需要判断文件是否存在、文件内容是否为空等存在，而这些操作都可以用 test 指令来实现，通过 man test 指令可以查看关于test指令的手册，手册中有如下说明： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">-s FILE</span><br><span class="line">              FILE exists and has a size greater than zero</span><br><span class="line">              如果文件存在且文件大小大于零，则返回真</span><br><span class="line">              </span><br><span class="line">-e FILE</span><br><span class="line">              FILE exists</span><br><span class="line">              如果文件存在，则返回真</span><br><span class="line">``` </span><br><span class="line">             </span><br><span class="line">在shell中通过test指令测试文件是否为空的示例脚本如下：</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line">if test -s file; then</span><br><span class="line">        echo &quot;not empty&quot;</span><br><span class="line">else</span><br><span class="line">        echo &quot;empty&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<p>在shell中，test指令还有另外一种写法，上面的脚本和下面的脚本是等价的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line"><span class="keyword">if</span> [ <span class="_">-s</span> file ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"not empty"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"empty"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<p><a href="http://www.letuknowit.com/topics/20120402/linux-shell-test-command.html/" target="_blank" rel="external">原文地址</a></p>
 
       
     </div>
@@ -350,17 +353,13 @@ source方式当用 source 方式执行时，会在父进程中执行 shell 脚�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/15/hexo-theme-next/" rel="next" title="hexo help">
-                <i class="fa fa-chevron-left"></i> hexo help
+              <a href="/2016/04/17/handling-spaces-in-filenames-with-find-tar-and-xargs/" rel="next" title="Mac backups - handling spaces in filenames with find, tar, and xargs">
+                <i class="fa fa-chevron-left"></i> Mac backups - handling spaces in filenames with find, tar, and xargs
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/15/shell-decision/" rel="prev" title="shell 判断、循环、函数">
-                shell 判断、循环、函数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -375,10 +374,10 @@ source方式当用 source 方式执行时，会在父进程中执行 shell 脚�
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/04/15/shell-script-exec-way-diff/"
-     data-title="shell script 的执行方式区别（source,sh script,./script）"
+        <div class="ds-share flat" data-thread-key="2016/05/24/shell-file-empty-or-not/"
+     data-title="如何在shell中判断一个文件是否为空"
      data-content=""
-     data-url="http://yoursite.com/2016/04/15/shell-script-exec-way-diff/">
+     data-url="http://yoursite.com/2016/05/24/shell-file-empty-or-not/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -405,8 +404,8 @@ source方式当用 source 方式执行时，会在父进程中执行 shell 脚�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/15/shell-script-exec-way-diff/"
-           data-title="shell script 的执行方式区别（source,sh script,./script）" data-url="http://yoursite.com/2016/04/15/shell-script-exec-way-diff/">
+      <div class="ds-thread" data-thread-key="2016/05/24/shell-file-empty-or-not/"
+           data-title="如何在shell中判断一个文件是否为空" data-url="http://yoursite.com/2016/05/24/shell-file-empty-or-not/">
       </div>
     
   </div>
@@ -501,7 +500,7 @@ source方式当用 source 方式执行时，会在父进程中执行 shell 脚�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#直接执行"><span class="nav-number">1.</span> <span class="nav-text">直接执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source方式"><span class="nav-number">2.</span> <span class="nav-text">source方式</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
