@@ -58,18 +58,18 @@
 
 
 <meta name="description" content="在 Linux 中写脚本的时候，总免不了需要判断文件是否存在、文件内容是否为空等存在，而这些操作都可以用 test 指令来实现，通过 man test 指令可以查看关于test指令的手册，手册中有如下说明： 
-12345678910-s FILE              FILE exists and has a size greater than zero              如果文件存">
+1234567-s FILE              FILE exists and has a size greater than zero              如果文件存在且文件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何在shell中判断一个文件是否为空">
 <meta property="og:url" content="http://yoursite.com/2016/05/24/shell-file-empty-or-not/index.html">
 <meta property="og:site_name" content="Joy's Life Canvas">
 <meta property="og:description" content="在 Linux 中写脚本的时候，总免不了需要判断文件是否存在、文件内容是否为空等存在，而这些操作都可以用 test 指令来实现，通过 man test 指令可以查看关于test指令的手册，手册中有如下说明： 
-12345678910-s FILE              FILE exists and has a size greater than zero              如果文件存">
-<meta property="og:updated_time" content="2016-05-24T15:49:17.000Z">
+1234567-s FILE              FILE exists and has a size greater than zero              如果文件存在且文件">
+<meta property="og:updated_time" content="2016-05-24T15:50:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在shell中判断一个文件是否为空">
 <meta name="twitter:description" content="在 Linux 中写脚本的时候，总免不了需要判断文件是否存在、文件内容是否为空等存在，而这些操作都可以用 test 指令来实现，通过 man test 指令可以查看关于test指令的手册，手册中有如下说明： 
-12345678910-s FILE              FILE exists and has a size greater than zero              如果文件存">
+1234567-s FILE              FILE exists and has a size greater than zero              如果文件存在且文件">
 
 
 
@@ -324,11 +324,11 @@
 
       
         <p>在 Linux 中写脚本的时候，总免不了需要判断文件是否存在、文件内容是否为空等存在，而这些操作都可以用 test 指令来实现，通过 man test 指令可以查看关于test指令的手册，手册中有如下说明： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-s FILE</span><br><span class="line">              FILE exists and has a size greater than zero</span><br><span class="line">              如果文件存在且文件大小大于零，则返回真</span><br><span class="line">              </span><br><span class="line">-e FILE</span><br><span class="line">              FILE exists</span><br><span class="line">              如果文件存在，则返回真</span><br><span class="line">``` </span><br><span class="line">          </span><br><span class="line">在shell中通过test指令测试文件是否为空的示例脚本如下：</span><br></pre></td></tr></table></figure>
-<p>#!/bin/sh</p>
-<p>if test -s file; then<br>        echo “not empty”<br>else<br>        echo “empty”<br>fi<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">在shell中，test指令还有另外一种写法，上面的脚本和下面的脚本是等价的：</span><br></pre></td></tr></table></figure></p>
-<p>#!/bin/sh</p>
-<p>if [ -s file ]; then<br>        echo “not empty”<br>else<br>        echo “empty”<br>fi<br>```</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-s FILE</span><br><span class="line">              FILE exists and has a size greater than zero</span><br><span class="line">              如果文件存在且文件大小大于零，则返回真</span><br><span class="line">              </span><br><span class="line">-e FILE</span><br><span class="line">              FILE exists</span><br><span class="line">              如果文件存在，则返回真</span><br></pre></td></tr></table></figure>
+<p>在shell中通过test指令测试文件是否为空的示例脚本如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line">if test -s file; then</span><br><span class="line">        echo &quot;not empty&quot;</span><br><span class="line">else</span><br><span class="line">        echo &quot;empty&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<p>在shell中，test指令还有另外一种写法，上面的脚本和下面的脚本是等价的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line">if [ -s file ]; then</span><br><span class="line">        echo &quot;not empty&quot;</span><br><span class="line">else</span><br><span class="line">        echo &quot;empty&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 <p><a href="http://www.letuknowit.com/topics/20120402/linux-shell-test-command.html/" target="_blank" rel="external">原文地址</a></p>
 
       
